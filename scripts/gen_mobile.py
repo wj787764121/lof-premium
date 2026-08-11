@@ -1,4 +1,65 @@
-<!DOCTYPE html>
+# -*- coding: utf-8 -*-
+"""
+生成手机端纯前端实时 LOF 溢价看板
+================================
+- 抓取各基金静态数据（净值/仓位/前十重仓）硬编码进 HTML
+- 前端 JS 通过 <script> 标签实时拉腾讯行情 qt.gtimg.cn
+- 只取数字字段（价格/涨跌幅）规避 GBK 编码问题
+- 部署一次即可手机随时访问 + 自动刷新
+"""
+import sys, os, json, time, importlib.util
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+spec = importlib.util.spec_from_file_location("lp", os.path.join(_HERE, "lof_premium.py"))
+lp = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(lp)
+
+ROOT = os.path.dirname(_HERE)
+OUT_DIR = os.path.join(ROOT, "mobile")
+
+DEFAULT_CODES = [
+    "501200", "501099", "501096", "501015", "501026",
+    "501085", "501073", "501079", "501082", "501076",
+]
+
+
+def prefix(code):
+    return "sh" if code[0] in "569" else "sz"
+
+
+def gather(codes):
+    """只抓静态数据（profile + top10），不拉实时行情"""
+    funds = []
+    for i, code in enumerate(codes, 1):
+        print(f"[{i}/{len(codes)}] {code} …")
+        try:
+            prof = lp.get_fund_profile(code)
+            time.sleep(0.5)
+            top10, report = lp.get_top10(code)
+            if not prof.get("nav") or len(top10) < 3:
+                print(f"  ✗ 数据不足，跳过")
+                continue
+            stock_pct = prof.get("stock_pct") or (sum(r["pct"] for r in top10 if r["pct"]) / 100.0)
+            covered = sum(r["pct"] for r in top10 if r["pct"]) / 100.0
+            holdings = [{
+                "code": r["code"], "name": r["name"], "pct": r["pct"] or 0,
+                "prefix": prefix(r["code"]),
+            } for r in top10]
+            funds.append({
+                "code": code, "name": prof["fullname"], "prefix": prefix(code),
+                "nav": round(prof["nav"], 4), "navDate": prof["nav_date"],
+                "stockPct": round(stock_pct, 4), "covered": round(covered, 4),
+                "scale": round(stock_pct / covered, 3) if covered > 0 else 1.0,
+                "report": report, "holdings": holdings,
+            })
+            print(f"  ✓ {prof['fullname']}  净值{prof['nav']:.4f}  仓位{stock_pct*100:.1f}%  前十{len(top10)}只")
+            time.sleep(0.5)
+        except Exception as e:
+            print(f"  ✗ {type(e).__name__}: {e}")
+    return funds
+
+
+HTML_TEMPLATE = r'''<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -78,11 +139,11 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 
 <div id="cards"></div>
 
-<div class="foot">LOF实时溢价看板 · 数据：腾讯财经/天天基金 · 持仓基准：2026Q2 · 不构成投资建议</div>
+<div class="foot">LOF实时溢价看板 · 数据：腾讯财经/天天基金 · 持仓基准：__REPORT__ · 不构成投资建议</div>
 </div>
 
 <script>
-const FUNDS = [{"code": "501200", "name": "民生加银科技创新混合(LOF)", "prefix": "sh", "nav": 1.4999, "navDate": "2026-08-10", "stockPct": 0.8741, "covered": 0.5174, "scale": 1.689, "report": "2026Q2", "holdings": [{"code": "688521", "name": "芯原股份", "pct": 6.38, "prefix": "sh"}, {"code": "300567", "name": "精测电子", "pct": 5.9, "prefix": "sz"}, {"code": "688037", "name": "芯源微", "pct": 5.41, "prefix": "sh"}, {"code": "603986", "name": "兆易创新", "pct": 5.28, "prefix": "sh"}, {"code": "688072", "name": "拓荆科技", "pct": 5.17, "prefix": "sh"}, {"code": "688361", "name": "中科飞测", "pct": 4.98, "prefix": "sh"}, {"code": "300666", "name": "江丰电子", "pct": 4.89, "prefix": "sz"}, {"code": "688627", "name": "精智达", "pct": 4.8, "prefix": "sh"}, {"code": "002371", "name": "北方华创", "pct": 4.49, "prefix": "sz"}, {"code": "300604", "name": "长川科技", "pct": 4.44, "prefix": "sz"}]}, {"code": "501099", "name": "平安新兴产业混合(LOF)", "prefix": "sh", "nav": 3.1845, "navDate": "2026-08-10", "stockPct": 0.901, "covered": 0.5608, "scale": 1.607, "report": "2026Q2", "holdings": [{"code": "300308", "name": "中际旭创", "pct": 7.86, "prefix": "sz"}, {"code": "688256", "name": "寒武纪", "pct": 7.48, "prefix": "sh"}, {"code": "688521", "name": "芯原股份", "pct": 6.2, "prefix": "sh"}, {"code": "300502", "name": "新易盛", "pct": 6.15, "prefix": "sz"}, {"code": "300604", "name": "长川科技", "pct": 5.42, "prefix": "sz"}, {"code": "688409", "name": "富创精密", "pct": 5.32, "prefix": "sh"}, {"code": "002484", "name": "江海股份", "pct": 5.11, "prefix": "sz"}, {"code": "002436", "name": "兴森科技", "pct": 4.44, "prefix": "sz"}, {"code": "600487", "name": "亨通光电", "pct": 4.16, "prefix": "sh"}, {"code": "600105", "name": "永鼎股份", "pct": 3.94, "prefix": "sh"}]}, {"code": "501096", "name": "国联安科创混合(LOF)", "prefix": "sh", "nav": 1.6099, "navDate": "2026-08-10", "stockPct": 0.9338, "covered": 0.631, "scale": 1.48, "report": "2026Q2", "holdings": [{"code": "001309", "name": "德明利", "pct": 7.43, "prefix": "sz"}, {"code": "688525", "name": "佰维存储", "pct": 6.77, "prefix": "sh"}, {"code": "603986", "name": "兆易创新", "pct": 6.76, "prefix": "sh"}, {"code": "688008", "name": "澜起科技", "pct": 6.19, "prefix": "sh"}, {"code": "002916", "name": "深南电路", "pct": 6.15, "prefix": "sz"}, {"code": "688766", "name": "普冉股份", "pct": 6.04, "prefix": "sh"}, {"code": "301611", "name": "珂玛科技", "pct": 6.04, "prefix": "sz"}, {"code": "300223", "name": "北京君正", "pct": 5.99, "prefix": "sz"}, {"code": "300475", "name": "香农芯创", "pct": 5.91, "prefix": "sz"}, {"code": "300054", "name": "鼎龙股份", "pct": 5.82, "prefix": "sz"}]}, {"code": "501015", "name": "财通多策略升级混合(LOF)A", "prefix": "sh", "nav": 2.971, "navDate": "2026-08-10", "stockPct": 0.9262, "covered": 0.733, "scale": 1.264, "report": "2026Q2", "holdings": [{"code": "300502", "name": "新易盛", "pct": 9.48, "prefix": "sz"}, {"code": "002384", "name": "东山精密", "pct": 9.41, "prefix": "sz"}, {"code": "688498", "name": "源杰科技", "pct": 9.29, "prefix": "sh"}, {"code": "600105", "name": "永鼎股份", "pct": 8.2, "prefix": "sh"}, {"code": "688037", "name": "芯源微", "pct": 7.85, "prefix": "sh"}, {"code": "300548", "name": "长芯博创", "pct": 7.8, "prefix": "sz"}, {"code": "601208", "name": "东材科技", "pct": 5.83, "prefix": "sh"}, {"code": "300395", "name": "菲利华", "pct": 5.49, "prefix": "sz"}, {"code": "688661", "name": "和林微纳", "pct": 5.36, "prefix": "sh"}, {"code": "301511", "name": "德福科技", "pct": 4.59, "prefix": "sz"}]}, {"code": "501026", "name": "财通多策略福享混合(LOF)A", "prefix": "sh", "nav": 2.5325, "navDate": "2026-08-10", "stockPct": 0.9215, "covered": 0.6266, "scale": 1.471, "report": "2026Q2", "holdings": [{"code": "688702", "name": "盛科通信", "pct": 8.27, "prefix": "sh"}, {"code": "300408", "name": "三环集团", "pct": 8.02, "prefix": "sz"}, {"code": "688256", "name": "寒武纪", "pct": 6.32, "prefix": "sh"}, {"code": "301511", "name": "德福科技", "pct": 6.21, "prefix": "sz"}, {"code": "688498", "name": "源杰科技", "pct": 6.17, "prefix": "sh"}, {"code": "300502", "name": "新易盛", "pct": 6.0, "prefix": "sz"}, {"code": "002837", "name": "英维克", "pct": 5.9, "prefix": "sz"}, {"code": "600183", "name": "生益科技", "pct": 5.46, "prefix": "sh"}, {"code": "002463", "name": "沪电股份", "pct": 5.17, "prefix": "sz"}, {"code": "300308", "name": "中际旭创", "pct": 5.14, "prefix": "sz"}]}, {"code": "501085", "name": "财通科创主题灵活配置混合(LOF)A", "prefix": "sh", "nav": 2.8647, "navDate": "2026-08-10", "stockPct": 0.944, "covered": 0.7492, "scale": 1.26, "report": "2026Q2", "holdings": [{"code": "002463", "name": "沪电股份", "pct": 8.58, "prefix": "sz"}, {"code": "002916", "name": "深南电路", "pct": 8.45, "prefix": "sz"}, {"code": "688183", "name": "生益电子", "pct": 8.23, "prefix": "sh"}, {"code": "002384", "name": "东山精密", "pct": 8.12, "prefix": "sz"}, {"code": "688800", "name": "瑞可达", "pct": 8.1, "prefix": "sh"}, {"code": "300476", "name": "胜宏科技", "pct": 8.09, "prefix": "sz"}, {"code": "002475", "name": "立讯精密", "pct": 7.99, "prefix": "sz"}, {"code": "002938", "name": "鹏鼎控股", "pct": 6.1, "prefix": "sz"}, {"code": "603228", "name": "景旺电子", "pct": 5.88, "prefix": "sh"}, {"code": "603920", "name": "世运电路", "pct": 5.38, "prefix": "sh"}]}, {"code": "501073", "name": "华安智联混合(LOF)A", "prefix": "sh", "nav": 2.1464, "navDate": "2026-08-10", "stockPct": 0.4537, "covered": 0.4127, "scale": 1.099, "report": "2026Q2", "holdings": [{"code": "603256", "name": "宏和科技", "pct": 8.21, "prefix": "sh"}, {"code": "688256", "name": "寒武纪", "pct": 7.04, "prefix": "sh"}, {"code": "688808", "name": "联讯仪器", "pct": 4.53, "prefix": "sh"}, {"code": "688729", "name": "屹唐股份", "pct": 4.1, "prefix": "sh"}, {"code": "603061", "name": "金海通", "pct": 4.01, "prefix": "sh"}, {"code": "301526", "name": "国际复材", "pct": 3.96, "prefix": "sz"}, {"code": "920045", "name": "蘅东光", "pct": 3.08, "prefix": "sh"}, {"code": "688141", "name": "杰华特", "pct": 2.85, "prefix": "sh"}, {"code": "688012", "name": "中微公司", "pct": 1.75, "prefix": "sh"}, {"code": "300260", "name": "新莱应材", "pct": 1.74, "prefix": "sz"}]}, {"code": "501079", "name": "大成科创主题混合(LOF)A", "prefix": "sh", "nav": 4.7193, "navDate": "2026-08-10", "stockPct": 0.9128, "covered": 0.6952, "scale": 1.313, "report": "2026Q2", "holdings": [{"code": "300502", "name": "新易盛", "pct": 9.51, "prefix": "sz"}, {"code": "300308", "name": "中际旭创", "pct": 9.34, "prefix": "sz"}, {"code": "688498", "name": "源杰科技", "pct": 7.78, "prefix": "sh"}, {"code": "600183", "name": "生益科技", "pct": 7.71, "prefix": "sh"}, {"code": "002463", "name": "沪电股份", "pct": 7.2, "prefix": "sz"}, {"code": "603986", "name": "兆易创新", "pct": 7.02, "prefix": "sh"}, {"code": "600176", "name": "中国巨石", "pct": 6.33, "prefix": "sh"}, {"code": "301526", "name": "国际复材", "pct": 5.73, "prefix": "sz"}, {"code": "002916", "name": "深南电路", "pct": 5.46, "prefix": "sz"}, {"code": "688300", "name": "联瑞新材", "pct": 3.44, "prefix": "sh"}]}, {"code": "501082", "name": "博时科创主题灵活配置混合(LOF)A", "prefix": "sh", "nav": 4.0623, "navDate": "2026-08-10", "stockPct": 0.8984, "covered": 0.52, "scale": 1.728, "report": "2026Q2", "holdings": [{"code": "688627", "name": "精智达", "pct": 7.01, "prefix": "sh"}, {"code": "600183", "name": "生益科技", "pct": 6.72, "prefix": "sh"}, {"code": "300567", "name": "精测电子", "pct": 6.44, "prefix": "sz"}, {"code": "603986", "name": "兆易创新", "pct": 6.42, "prefix": "sh"}, {"code": "300604", "name": "长川科技", "pct": 5.4, "prefix": "sz"}, {"code": "688347", "name": "华虹宏力", "pct": 5.36, "prefix": "sh"}, {"code": "301392", "name": "汇成真空", "pct": 3.98, "prefix": "sz"}, {"code": "688256", "name": "寒武纪", "pct": 3.68, "prefix": "sh"}, {"code": "01888", "name": "建滔积层板", "pct": 3.62, "prefix": "sz"}, {"code": "002938", "name": "鹏鼎控股", "pct": 3.37, "prefix": "sz"}]}, {"code": "501076", "name": "鹏华创新动力混合(LOF)", "prefix": "sh", "nav": 1.6485, "navDate": "2026-08-10", "stockPct": 0.7917, "covered": 0.6859, "scale": 1.154, "report": "2026Q2", "holdings": [{"code": "301013", "name": "利和兴", "pct": 9.77, "prefix": "sz"}, {"code": "301128", "name": "强瑞技术", "pct": 9.37, "prefix": "sz"}, {"code": "605376", "name": "博迁新材", "pct": 7.98, "prefix": "sh"}, {"code": "688020", "name": "方邦股份", "pct": 7.39, "prefix": "sh"}, {"code": "01888", "name": "建滔积层板", "pct": 7.09, "prefix": "sz"}, {"code": "688627", "name": "精智达", "pct": 6.14, "prefix": "sh"}, {"code": "688368", "name": "晶丰明源", "pct": 5.96, "prefix": "sh"}, {"code": "600105", "name": "永鼎股份", "pct": 5.82, "prefix": "sh"}, {"code": "688172", "name": "燕东微", "pct": 4.67, "prefix": "sh"}, {"code": "000636", "name": "风华高科", "pct": 4.4, "prefix": "sz"}]}];
+const FUNDS = __FUNDS__;
 const MARKET_INDICES = [
   {code:"sh000001", name:"上证"},
   {code:"sz399001", name:"深成"},
@@ -341,3 +402,37 @@ document.getElementById("refreshBtn").classList.add("off");
 refresh();
 </script>
 </body></html>
+'''
+
+
+def main():
+    codes = DEFAULT_CODES
+    print(f"▶ 生成手机看板，{len(codes)} 只基金\n")
+    funds = gather(codes)
+    if not funds:
+        print("✗ 无数据"); sys.exit(1)
+
+    reports = sorted(set(f["report"] for f in funds))
+    os.makedirs(OUT_DIR, exist_ok=True)
+
+    funds_json = json.dumps(funds, ensure_ascii=False)
+    html = HTML_TEMPLATE.replace("__FUNDS__", funds_json).replace("__REPORT__", "/".join(reports))
+
+    out = os.path.join(OUT_DIR, "index.html")
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"\n✔ 已生成 {out}（{len(funds)} 只基金）")
+    # 同时保存数据快照
+    with open(os.path.join(OUT_DIR, "funds.json"), "w", encoding="utf-8") as f:
+        json.dump(funds, f, ensure_ascii=False, indent=1)
+    print(f"✔ 数据快照 {OUT_DIR}/funds.json")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:
+        print(f"\n✗ 出错：{e}")
+        try: input("回车退出...")
+        except: pass
+        sys.exit(1)
