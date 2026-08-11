@@ -69,8 +69,8 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 <div class="card">
 <div class="tbl-wrap">
 <table class="sum-tbl" id="sumTbl">
-<thead><tr><th>代码</th><th>基金</th><th>场内</th><th>估净值</th><th>净值涨跌</th><th>溢价</th><th>误差</th></tr></thead>
-<tbody id="sumBody"><tr><td colspan="7" style="text-align:center;padding:20px"><span class="spinner"></span> 加载中…</td></tr></tbody>
+<thead><tr><th>代码</th><th>基金</th><th>场内</th><th>涨跌</th><th>估净值</th><th>净值涨跌</th><th>溢价</th><th>误差</th></tr></thead>
+<tbody id="sumBody"><tr><td colspan="8" style="text-align:center;padding:20px"><span class="spinner"></span> 加载中…</td></tr></tbody>
 </table>
 </div>
 <div class="warn">同比例口径：未披露股票按前十同比例涨跌。<b>净值涨跌</b>=组合估算涨跌；<b>误差</b>=当日估算净值 vs 次日官方实际净值的偏差（每日自动记录，次日公布净值后计算）。红涨绿跌，仅供盘中参考。</div>
@@ -240,7 +240,9 @@ function render(results, log){
     const errTxt=le?fmt(le.err,2,'+')+'%':'—';
     rows+=`<tr onclick="toggle('${r.fund.code}')" style="cursor:pointer">
     <td>${r.fund.code}</td><td>${r.fund.name.slice(0,10)}</td>
-    <td>${r.price.toFixed(3)}</td><td><b>${r.navEst.toFixed(4)}</b></td>
+    <td>${r.price.toFixed(3)}</td>
+    <td class="${cls(r.priceChg)}">${fmt(r.priceChg,2,'+')+'%'}</td>
+    <td><b>${r.navEst.toFixed(4)}</b></td>
     <td class="${cls(r.estChg)}">${fmt(r.estChg,2,'+')+'%'}</td>
     <td class="${cls(r.prem)}"><b>${fmt(r.prem,2,'+')+'%'}</b>${tag}</td>
     <td class="${cls(le?le.err:null)}">${errTxt}</td></tr>`;
