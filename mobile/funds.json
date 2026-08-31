@@ -3,8 +3,8 @@
   "code": "501200",
   "name": "民生加银科技创新混合(LOF)",
   "prefix": "sh",
-  "nav": 1.4606,
-  "navDate": "2026-08-20",
+  "nav": 1.4589,
+  "navDate": "2026-08-27",
   "stockPct": 0.8741,
   "covered": 0.5174,
   "scale": 1.689,
@@ -76,8 +76,8 @@
   "code": "501099",
   "name": "平安新兴产业混合(LOF)",
   "prefix": "sh",
-  "nav": 3.1476,
-  "navDate": "2026-08-20",
+  "nav": 3.0846,
+  "navDate": "2026-08-27",
   "stockPct": 0.901,
   "covered": 0.5608,
   "scale": 1.607,
@@ -149,8 +149,8 @@
   "code": "501096",
   "name": "国联安科创混合(LOF)",
   "prefix": "sh",
-  "nav": 1.596,
-  "navDate": "2026-08-20",
+  "nav": 1.5631,
+  "navDate": "2026-08-27",
   "stockPct": 0.9338,
   "covered": 0.631,
   "scale": 1.48,
@@ -200,7 +200,7 @@
    },
    {
     "code": "300223",
-    "name": "北京君正",
+    "name": "君正股份",
     "pct": 5.99,
     "prefix": "sz"
    },
@@ -222,8 +222,8 @@
   "code": "501015",
   "name": "财通多策略升级混合(LOF)A",
   "prefix": "sh",
-  "nav": 3.11,
-  "navDate": "2026-08-20",
+  "nav": 3.065,
+  "navDate": "2026-08-27",
   "stockPct": 0.9262,
   "covered": 0.733,
   "scale": 1.264,
@@ -295,8 +295,8 @@
   "code": "501026",
   "name": "财通多策略福享混合(LOF)A",
   "prefix": "sh",
-  "nav": 2.513,
-  "navDate": "2026-08-20",
+  "nav": 2.4808,
+  "navDate": "2026-08-27",
   "stockPct": 0.9215,
   "covered": 0.6266,
   "scale": 1.471,
@@ -365,84 +365,11 @@
   ]
  },
  {
-  "code": "501085",
-  "name": "财通科创主题灵活配置混合(LOF)A",
-  "prefix": "sh",
-  "nav": 3.3499,
-  "navDate": "2026-08-20",
-  "stockPct": 0.944,
-  "covered": 0.7492,
-  "scale": 1.26,
-  "report": "2026Q2",
-  "holdings": [
-   {
-    "code": "002463",
-    "name": "沪电股份",
-    "pct": 8.58,
-    "prefix": "sz"
-   },
-   {
-    "code": "002916",
-    "name": "深南电路",
-    "pct": 8.45,
-    "prefix": "sz"
-   },
-   {
-    "code": "688183",
-    "name": "生益电子",
-    "pct": 8.23,
-    "prefix": "sh"
-   },
-   {
-    "code": "002384",
-    "name": "东山精密",
-    "pct": 8.12,
-    "prefix": "sz"
-   },
-   {
-    "code": "688800",
-    "name": "瑞可达",
-    "pct": 8.1,
-    "prefix": "sh"
-   },
-   {
-    "code": "300476",
-    "name": "胜宏科技",
-    "pct": 8.09,
-    "prefix": "sz"
-   },
-   {
-    "code": "002475",
-    "name": "立讯精密",
-    "pct": 7.99,
-    "prefix": "sz"
-   },
-   {
-    "code": "002938",
-    "name": "鹏鼎控股",
-    "pct": 6.1,
-    "prefix": "sz"
-   },
-   {
-    "code": "603228",
-    "name": "景旺电子",
-    "pct": 5.88,
-    "prefix": "sh"
-   },
-   {
-    "code": "603920",
-    "name": "世运电路",
-    "pct": 5.38,
-    "prefix": "sh"
-   }
-  ]
- },
- {
   "code": "501073",
   "name": "华安智联混合(LOF)A",
   "prefix": "sh",
-  "nav": 2.1719,
-  "navDate": "2026-08-20",
+  "nav": 2.1874,
+  "navDate": "2026-08-27",
   "stockPct": 0.4537,
   "covered": 0.4127,
   "scale": 1.099,
@@ -514,8 +441,8 @@
   "code": "501079",
   "name": "大成科创主题混合(LOF)A",
   "prefix": "sh",
-  "nav": 4.6161,
-  "navDate": "2026-08-20",
+  "nav": 4.5326,
+  "navDate": "2026-08-27",
   "stockPct": 0.9128,
   "covered": 0.6952,
   "scale": 1.313,
@@ -584,84 +511,11 @@
   ]
  },
  {
-  "code": "501082",
-  "name": "博时科创主题灵活配置混合(LOF)A",
-  "prefix": "sh",
-  "nav": 3.9476,
-  "navDate": "2026-08-20",
-  "stockPct": 0.8984,
-  "covered": 0.52,
-  "scale": 1.728,
-  "report": "2026Q2",
-  "holdings": [
-   {
-    "code": "688627",
-    "name": "精智达",
-    "pct": 7.01,
-    "prefix": "sh"
-   },
-   {
-    "code": "600183",
-    "name": "生益科技",
-    "pct": 6.72,
-    "prefix": "sh"
-   },
-   {
-    "code": "300567",
-    "name": "精测电子",
-    "pct": 6.44,
-    "prefix": "sz"
-   },
-   {
-    "code": "603986",
-    "name": "兆易创新",
-    "pct": 6.42,
-    "prefix": "sh"
-   },
-   {
-    "code": "300604",
-    "name": "长川科技",
-    "pct": 5.4,
-    "prefix": "sz"
-   },
-   {
-    "code": "688347",
-    "name": "华虹宏力",
-    "pct": 5.36,
-    "prefix": "sh"
-   },
-   {
-    "code": "301392",
-    "name": "汇成真空",
-    "pct": 3.98,
-    "prefix": "sz"
-   },
-   {
-    "code": "688256",
-    "name": "寒武纪",
-    "pct": 3.68,
-    "prefix": "sh"
-   },
-   {
-    "code": "01888",
-    "name": "建滔积层板",
-    "pct": 3.62,
-    "prefix": "sz"
-   },
-   {
-    "code": "002938",
-    "name": "鹏鼎控股",
-    "pct": 3.37,
-    "prefix": "sz"
-   }
-  ]
- },
- {
   "code": "501076",
   "name": "鹏华创新动力混合(LOF)",
   "prefix": "sh",
-  "nav": 1.722,
-  "navDate": "2026-08-20",
+  "nav": 1.7115,
+  "navDate": "2026-08-27",
   "stockPct": 0.7917,
   "covered": 0.6859,
   "scale": 1.154,
