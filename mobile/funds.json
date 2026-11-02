@@ -3,72 +3,72 @@
   "code": "501200",
   "name": "民生加银科技创新混合(LOF)",
   "prefix": "sh",
-  "nav": 1.0764,
-  "navDate": "2026-10-22",
-  "stockPct": 0.8741,
-  "covered": 0.5174,
-  "scale": 1.689,
-  "report": "2026Q2",
+  "nav": 0.9017,
+  "navDate": "2026-10-29",
+  "stockPct": 0.9297,
+  "covered": 0.5448,
+  "scale": 1.706,
+  "report": "2026Q3",
   "holdings": [
-   {
-    "code": "688521",
-    "name": "芯原股份",
-    "pct": 6.38,
-    "prefix": "sh"
-   },
-   {
-    "code": "300567",
-    "name": "精测电子",
-    "pct": 5.9,
-    "prefix": "sz"
-   },
    {
     "code": "688037",
     "name": "芯源微",
-    "pct": 5.41,
-    "prefix": "sh"
-   },
-   {
-    "code": "603986",
-    "name": "兆易创新",
-    "pct": 5.28,
-    "prefix": "sh"
-   },
-   {
-    "code": "688072",
-    "name": "拓荆科技",
-    "pct": 5.17,
+    "pct": 6.96,
     "prefix": "sh"
    },
    {
     "code": "688361",
     "name": "中科飞测",
-    "pct": 4.98,
+    "pct": 6.8,
+    "prefix": "sh"
+   },
+   {
+    "code": "300567",
+    "name": "精测电子",
+    "pct": 5.5,
+    "prefix": "sz"
+   },
+   {
+    "code": "688072",
+    "name": "拓荆科技",
+    "pct": 5.44,
     "prefix": "sh"
    },
    {
     "code": "300666",
     "name": "江丰电子",
-    "pct": 4.89,
+    "pct": 5.26,
     "prefix": "sz"
-   },
-   {
-    "code": "688627",
-    "name": "精智达",
-    "pct": 4.8,
-    "prefix": "sh"
    },
    {
     "code": "002371",
     "name": "北方华创",
-    "pct": 4.49,
+    "pct": 5.24,
     "prefix": "sz"
    },
    {
-    "code": "300604",
-    "name": "长川科技",
-    "pct": 4.44,
-    "prefix": "sz"
+    "code": "688521",
+    "name": "芯原股份",
+    "pct": 5.09,
+    "prefix": "sh"
+   },
+   {
+    "code": "688627",
+    "name": "精智达",
+    "pct": 4.9,
+    "prefix": "sh"
+   },
+   {
+    "code": "688019",
+    "name": "安集科技",
+    "pct": 4.76,
+    "prefix": "sh"
+   },
+   {
+    "code": "688120",
+    "name": "华海清科",
+    "pct": 4.53,
+    "prefix": "sh"
    }
   ]
  },
@@ -76,72 +76,72 @@
   "code": "501099",
   "name": "平安新兴产业混合(LOF)",
   "prefix": "sh",
-  "nav": 2.5055,
-  "navDate": "2026-10-22",
-  "stockPct": 0.901,
-  "covered": 0.5608,
-  "scale": 1.607,
-  "report": "2026Q2",
+  "nav": 2.2947,
+  "navDate": "2026-10-29",
+  "stockPct": 0.778,
+  "covered": 0.4119,
+  "scale": 1.889,
+  "report": "2026Q3",
   "holdings": [
+   {
+    "code": "300394",
+    "name": "天孚通信",
+    "pct": 6.89,
+    "prefix": "sz"
+   },
+   {
+    "code": "300489",
+    "name": "光智科技",
+    "pct": 5.43,
+    "prefix": "sz"
+   },
+   {
+    "code": "300502",
+    "name": "新易盛",
+    "pct": 5.09,
+    "prefix": "sz"
+   },
    {
     "code": "300308",
     "name": "中际旭创",
-    "pct": 7.86,
+    "pct": 4.39,
+    "prefix": "sz"
+   },
+   {
+    "code": "688361",
+    "name": "中科飞测",
+    "pct": 3.85,
+    "prefix": "sh"
+   },
+   {
+    "code": "300548",
+    "name": "长芯博创",
+    "pct": 3.69,
     "prefix": "sz"
    },
    {
     "code": "688256",
     "name": "寒武纪",
-    "pct": 7.48,
+    "pct": 3.48,
     "prefix": "sh"
    },
    {
-    "code": "688521",
-    "name": "芯原股份",
-    "pct": 6.2,
+    "code": "688498",
+    "name": "源杰科技",
+    "pct": 3.32,
     "prefix": "sh"
    },
    {
-    "code": "300502",
-    "name": "新易盛",
-    "pct": 6.15,
+    "code": "002384",
+    "name": "东山精密",
+    "pct": 2.56,
     "prefix": "sz"
    },
    {
-    "code": "300604",
-    "name": "长川科技",
-    "pct": 5.42,
+    "code": "300759",
+    "name": "康龙化成",
+    "pct": 2.49,
     "prefix": "sz"
-   },
-   {
-    "code": "688409",
-    "name": "富创精密",
-    "pct": 5.32,
-    "prefix": "sh"
-   },
-   {
-    "code": "002484",
-    "name": "江海股份",
-    "pct": 5.11,
-    "prefix": "sz"
-   },
-   {
-    "code": "002436",
-    "name": "兴森科技",
-    "pct": 4.44,
-    "prefix": "sz"
-   },
-   {
-    "code": "600487",
-    "name": "亨通光电",
-    "pct": 4.16,
-    "prefix": "sh"
-   },
-   {
-    "code": "600105",
-    "name": "永鼎股份",
-    "pct": 3.94,
-    "prefix": "sh"
    }
   ]
  },
@@ -149,72 +149,72 @@
   "code": "501096",
   "name": "国联安科创混合(LOF)",
   "prefix": "sh",
-  "nav": 1.079,
-  "navDate": "2026-10-22",
-  "stockPct": 0.9338,
-  "covered": 0.631,
-  "scale": 1.48,
-  "report": "2026Q2",
+  "nav": 0.9544,
+  "navDate": "2026-10-29",
+  "stockPct": 0.9229,
+  "covered": 0.7833,
+  "scale": 1.178,
+  "report": "2026Q3",
   "holdings": [
    {
-    "code": "001309",
-    "name": "德明利",
-    "pct": 7.43,
+    "code": "00100",
+    "name": "MINIMAX-W",
+    "pct": 10.05,
     "prefix": "sz"
    },
    {
-    "code": "688525",
-    "name": "佰维存储",
-    "pct": 6.77,
+    "code": "02513",
+    "name": "智谱",
+    "pct": 10.03,
+    "prefix": "sz"
+   },
+   {
+    "code": "688825",
+    "name": "长鑫科技",
+    "pct": 9.99,
     "prefix": "sh"
    },
    {
-    "code": "603986",
-    "name": "兆易创新",
-    "pct": 6.76,
+    "code": "688072",
+    "name": "拓荆科技",
+    "pct": 9.48,
     "prefix": "sh"
    },
    {
-    "code": "688008",
-    "name": "澜起科技",
-    "pct": 6.19,
+    "code": "688012",
+    "name": "中微公司",
+    "pct": 8.09,
+    "prefix": "sh"
+   },
+   {
+    "code": "688766",
+    "name": "普冉股份",
+    "pct": 7.34,
     "prefix": "sh"
    },
    {
     "code": "002916",
     "name": "深南电路",
-    "pct": 6.15,
+    "pct": 6.16,
     "prefix": "sz"
    },
    {
-    "code": "688766",
-    "name": "普冉股份",
-    "pct": 6.04,
+    "code": "688808",
+    "name": "联讯仪器",
+    "pct": 6.03,
     "prefix": "sh"
    },
    {
-    "code": "301611",
-    "name": "珂玛科技",
-    "pct": 6.04,
-    "prefix": "sz"
+    "code": "688525",
+    "name": "佰维存储",
+    "pct": 5.7,
+    "prefix": "sh"
    },
    {
-    "code": "300223",
-    "name": "君正股份",
-    "pct": 5.99,
-    "prefix": "sz"
-   },
-   {
-    "code": "300475",
-    "name": "香农芯创",
-    "pct": 5.91,
-    "prefix": "sz"
-   },
-   {
-    "code": "300054",
-    "name": "鼎龙股份",
-    "pct": 5.82,
-    "prefix": "sz"
+    "code": "603986",
+    "name": "兆易创新",
+    "pct": 5.46,
+    "prefix": "sh"
    }
   ]
  },
@@ -222,72 +222,72 @@
   "code": "501015",
   "name": "财通多策略升级混合(LOF)A",
   "prefix": "sh",
-  "nav": 2.288,
-  "navDate": "2026-10-22",
-  "stockPct": 0.9262,
-  "covered": 0.733,
-  "scale": 1.264,
-  "report": "2026Q2",
+  "nav": 1.858,
+  "navDate": "2026-10-29",
+  "stockPct": 0.9366,
+  "covered": 0.6967,
+  "scale": 1.344,
+  "report": "2026Q3",
   "holdings": [
+   {
+    "code": "688498",
+    "name": "源杰科技",
+    "pct": 9.82,
+    "prefix": "sh"
+   },
+   {
+    "code": "300308",
+    "name": "中际旭创",
+    "pct": 9.05,
+    "prefix": "sz"
+   },
    {
     "code": "300502",
     "name": "新易盛",
-    "pct": 9.48,
+    "pct": 8.82,
     "prefix": "sz"
    },
    {
     "code": "002384",
     "name": "东山精密",
-    "pct": 9.41,
-    "prefix": "sz"
-   },
-   {
-    "code": "688498",
-    "name": "源杰科技",
-    "pct": 9.29,
-    "prefix": "sh"
-   },
-   {
-    "code": "600105",
-    "name": "永鼎股份",
-    "pct": 8.2,
-    "prefix": "sh"
-   },
-   {
-    "code": "688037",
-    "name": "芯源微",
-    "pct": 7.85,
-    "prefix": "sh"
-   },
-   {
-    "code": "300548",
-    "name": "长芯博创",
-    "pct": 7.8,
+    "pct": 8.29,
     "prefix": "sz"
    },
    {
     "code": "601208",
     "name": "东材科技",
-    "pct": 5.83,
+    "pct": 7.29,
     "prefix": "sh"
    },
    {
-    "code": "300395",
-    "name": "菲利华",
-    "pct": 5.49,
+    "code": "300408",
+    "name": "三环集团",
+    "pct": 6.87,
     "prefix": "sz"
    },
    {
-    "code": "688661",
-    "name": "和林微纳",
-    "pct": 5.36,
+    "code": "600183",
+    "name": "生益科技",
+    "pct": 5.58,
     "prefix": "sh"
    },
    {
     "code": "301511",
     "name": "德福科技",
-    "pct": 4.59,
+    "pct": 5.41,
     "prefix": "sz"
+   },
+   {
+    "code": "002938",
+    "name": "鹏鼎控股",
+    "pct": 4.71,
+    "prefix": "sz"
+   },
+   {
+    "code": "688037",
+    "name": "芯源微",
+    "pct": 3.83,
+    "prefix": "sh"
    }
   ]
  },
@@ -295,72 +295,72 @@
   "code": "501026",
   "name": "财通多策略福享混合(LOF)A",
   "prefix": "sh",
-  "nav": 2.1763,
-  "navDate": "2026-10-22",
-  "stockPct": 0.9215,
-  "covered": 0.6266,
-  "scale": 1.471,
-  "report": "2026Q2",
+  "nav": 2.0943,
+  "navDate": "2026-10-29",
+  "stockPct": 0.8199,
+  "covered": 0.6417,
+  "scale": 1.278,
+  "report": "2026Q3",
   "holdings": [
    {
-    "code": "688702",
-    "name": "盛科通信",
-    "pct": 8.27,
+    "code": "603259",
+    "name": "药明康德",
+    "pct": 8.68,
+    "prefix": "sh"
+   },
+   {
+    "code": "300759",
+    "name": "康龙化成",
+    "pct": 8.68,
+    "prefix": "sz"
+   },
+   {
+    "code": "603268",
+    "name": "松发股份",
+    "pct": 8.06,
     "prefix": "sh"
    },
    {
     "code": "300408",
     "name": "三环集团",
-    "pct": 8.02,
+    "pct": 7.62,
     "prefix": "sz"
    },
    {
-    "code": "688256",
-    "name": "寒武纪",
-    "pct": 6.32,
+    "code": "601872",
+    "name": "招商轮船",
+    "pct": 6.11,
     "prefix": "sh"
    },
    {
-    "code": "301511",
-    "name": "德福科技",
-    "pct": 6.21,
-    "prefix": "sz"
+    "code": "600026",
+    "name": "中远海能",
+    "pct": 6.01,
+    "prefix": "sh"
    },
    {
     "code": "688498",
     "name": "源杰科技",
-    "pct": 6.17,
+    "pct": 5.91,
+    "prefix": "sh"
+   },
+   {
+    "code": "688825",
+    "name": "长鑫科技",
+    "pct": 5.81,
     "prefix": "sh"
    },
    {
     "code": "300502",
     "name": "新易盛",
-    "pct": 6.0,
+    "pct": 3.92,
     "prefix": "sz"
    },
    {
-    "code": "002837",
-    "name": "英维克",
-    "pct": 5.9,
-    "prefix": "sz"
-   },
-   {
-    "code": "600183",
-    "name": "生益科技",
-    "pct": 5.46,
+    "code": "603236",
+    "name": "移远通信",
+    "pct": 3.37,
     "prefix": "sh"
-   },
-   {
-    "code": "002463",
-    "name": "沪电股份",
-    "pct": 5.17,
-    "prefix": "sz"
-   },
-   {
-    "code": "300308",
-    "name": "中际旭创",
-    "pct": 5.14,
-    "prefix": "sz"
    }
   ]
  },
@@ -368,145 +368,72 @@
   "code": "501085",
   "name": "财通科创主题灵活配置混合(LOF)A",
   "prefix": "sh",
-  "nav": 2.7869,
-  "navDate": "2026-10-22",
-  "stockPct": 0.944,
-  "covered": 0.7492,
-  "scale": 1.26,
-  "report": "2026Q2",
+  "nav": 2.273,
+  "navDate": "2026-10-29",
+  "stockPct": 0.9325,
+  "covered": 0.837,
+  "scale": 1.114,
+  "report": "2026Q3",
   "holdings": [
    {
-    "code": "002463",
-    "name": "沪电股份",
-    "pct": 8.58,
+    "code": "301183",
+    "name": "东田微",
+    "pct": 9.4,
     "prefix": "sz"
    },
    {
-    "code": "002916",
-    "name": "深南电路",
-    "pct": 8.45,
-    "prefix": "sz"
-   },
-   {
-    "code": "688183",
-    "name": "生益电子",
-    "pct": 8.23,
+    "code": "603236",
+    "name": "移远通信",
+    "pct": 9.33,
     "prefix": "sh"
    },
    {
-    "code": "002384",
-    "name": "东山精密",
-    "pct": 8.12,
+    "code": "300570",
+    "name": "太辰光",
+    "pct": 9.04,
     "prefix": "sz"
+   },
+   {
+    "code": "300502",
+    "name": "新易盛",
+    "pct": 8.89,
+    "prefix": "sz"
+   },
+   {
+    "code": "300308",
+    "name": "中际旭创",
+    "pct": 8.83,
+    "prefix": "sz"
+   },
+   {
+    "code": "688313",
+    "name": "仕佳光子",
+    "pct": 8.81,
+    "prefix": "sh"
+   },
+   {
+    "code": "688498",
+    "name": "源杰科技",
+    "pct": 8.26,
+    "prefix": "sh"
    },
    {
     "code": "688800",
     "name": "瑞可达",
-    "pct": 8.1,
+    "pct": 7.93,
     "prefix": "sh"
    },
    {
-    "code": "300476",
-    "name": "胜宏科技",
-    "pct": 8.09,
-    "prefix": "sz"
-   },
-   {
-    "code": "002475",
-    "name": "立讯精密",
-    "pct": 7.99,
-    "prefix": "sz"
-   },
-   {
-    "code": "002938",
-    "name": "鹏鼎控股",
-    "pct": 6.1,
-    "prefix": "sz"
-   },
-   {
-    "code": "603228",
-    "name": "景旺电子",
-    "pct": 5.88,
+    "code": "688001",
+    "name": "华兴源创",
+    "pct": 7.27,
     "prefix": "sh"
    },
    {
-    "code": "603920",
-    "name": "世运电路",
-    "pct": 5.38,
+    "code": "600330",
+    "name": "天通股份",
+    "pct": 5.94,
     "prefix": "sh"
-   }
-  ]
- },
- {
-  "code": "501073",
-  "name": "华安智联混合(LOF)A",
-  "prefix": "sh",
-  "nav": 1.929,
-  "navDate": "2026-10-22",
-  "stockPct": 0.4537,
-  "covered": 0.4127,
-  "scale": 1.099,
-  "report": "2026Q2",
-  "holdings": [
-   {
-    "code": "603256",
-    "name": "宏和科技",
-    "pct": 8.21,
-    "prefix": "sh"
-   },
-   {
-    "code": "688256",
-    "name": "寒武纪",
-    "pct": 7.04,
-    "prefix": "sh"
-   },
-   {
-    "code": "688808",
-    "name": "联讯仪器",
-    "pct": 4.53,
-    "prefix": "sh"
-   },
-   {
-    "code": "688729",
-    "name": "屹唐股份",
-    "pct": 4.1,
-    "prefix": "sh"
-   },
-   {
-    "code": "603061",
-    "name": "金海通",
-    "pct": 4.01,
-    "prefix": "sh"
-   },
-   {
-    "code": "301526",
-    "name": "国际复材",
-    "pct": 3.96,
-    "prefix": "sz"
-   },
-   {
-    "code": "920045",
-    "name": "蘅东光",
-    "pct": 3.08,
-    "prefix": "sh"
-   },
-   {
-    "code": "688141",
-    "name": "杰华特",
-    "pct": 2.85,
-    "prefix": "sh"
-   },
-   {
-    "code": "688012",
-    "name": "中微公司",
-    "pct": 1.75,
-    "prefix": "sh"
-   },
-   {
-    "code": "300260",
-    "name": "新莱应材",
-    "pct": 1.74,
-    "prefix": "sz"
    }
   ]
  },
@@ -514,71 +441,71 @@
   "code": "501079",
   "name": "大成科创主题混合(LOF)A",
   "prefix": "sh",
-  "nav": 3.5626,
-  "navDate": "2026-10-22",
-  "stockPct": 0.9128,
-  "covered": 0.6952,
-  "scale": 1.313,
-  "report": "2026Q2",
+  "nav": 3.3274,
+  "navDate": "2026-10-29",
+  "stockPct": 0.9129,
+  "covered": 0.6665,
+  "scale": 1.37,
+  "report": "2026Q3",
   "holdings": [
+   {
+    "code": "002463",
+    "name": "沪电股份",
+    "pct": 9.44,
+    "prefix": "sz"
+   },
    {
     "code": "300502",
     "name": "新易盛",
-    "pct": 9.51,
+    "pct": 9.31,
     "prefix": "sz"
    },
    {
     "code": "300308",
     "name": "中际旭创",
-    "pct": 9.34,
-    "prefix": "sz"
-   },
-   {
-    "code": "688498",
-    "name": "源杰科技",
-    "pct": 7.78,
-    "prefix": "sh"
-   },
-   {
-    "code": "600183",
-    "name": "生益科技",
-    "pct": 7.71,
-    "prefix": "sh"
-   },
-   {
-    "code": "002463",
-    "name": "沪电股份",
-    "pct": 7.2,
-    "prefix": "sz"
-   },
-   {
-    "code": "603986",
-    "name": "兆易创新",
-    "pct": 7.02,
-    "prefix": "sh"
-   },
-   {
-    "code": "600176",
-    "name": "中国巨石",
-    "pct": 6.33,
-    "prefix": "sh"
-   },
-   {
-    "code": "301526",
-    "name": "国际复材",
-    "pct": 5.73,
+    "pct": 8.96,
     "prefix": "sz"
    },
    {
     "code": "002916",
     "name": "深南电路",
-    "pct": 5.46,
+    "pct": 8.95,
     "prefix": "sz"
    },
    {
-    "code": "688300",
-    "name": "联瑞新材",
-    "pct": 3.44,
+    "code": "688498",
+    "name": "源杰科技",
+    "pct": 6.59,
+    "prefix": "sh"
+   },
+   {
+    "code": "600183",
+    "name": "生益科技",
+    "pct": 6.51,
+    "prefix": "sh"
+   },
+   {
+    "code": "603259",
+    "name": "药明康德",
+    "pct": 5.73,
+    "prefix": "sh"
+   },
+   {
+    "code": "600150",
+    "name": "中国船舶",
+    "pct": 4.9,
+    "prefix": "sh"
+   },
+   {
+    "code": "603268",
+    "name": "松发股份",
+    "pct": 3.96,
+    "prefix": "sh"
+   },
+   {
+    "code": "688825",
+    "name": "长鑫科技",
+    "pct": 2.3,
     "prefix": "sh"
    }
   ]
@@ -587,72 +514,72 @@
   "code": "501082",
   "name": "博时科创主题灵活配置混合(LOF)A",
   "prefix": "sh",
-  "nav": 2.9846,
-  "navDate": "2026-10-22",
-  "stockPct": 0.8984,
-  "covered": 0.52,
-  "scale": 1.728,
-  "report": "2026Q2",
+  "nav": 2.6227,
+  "navDate": "2026-10-29",
+  "stockPct": 0.8652,
+  "covered": 0.487,
+  "scale": 1.777,
+  "report": "2026Q3",
   "holdings": [
-   {
-    "code": "688627",
-    "name": "精智达",
-    "pct": 7.01,
-    "prefix": "sh"
-   },
    {
     "code": "600183",
     "name": "生益科技",
-    "pct": 6.72,
-    "prefix": "sh"
-   },
-   {
-    "code": "300567",
-    "name": "精测电子",
-    "pct": 6.44,
-    "prefix": "sz"
-   },
-   {
-    "code": "603986",
-    "name": "兆易创新",
-    "pct": 6.42,
+    "pct": 7.96,
     "prefix": "sh"
    },
    {
     "code": "300604",
     "name": "长川科技",
-    "pct": 5.4,
+    "pct": 5.9,
     "prefix": "sz"
    },
    {
-    "code": "688347",
-    "name": "华虹宏力",
-    "pct": 5.36,
+    "code": "688037",
+    "name": "芯源微",
+    "pct": 5.78,
+    "prefix": "sh"
+   },
+   {
+    "code": "300567",
+    "name": "精测电子",
+    "pct": 5.73,
+    "prefix": "sz"
+   },
+   {
+    "code": "688072",
+    "name": "拓荆科技",
+    "pct": 4.4,
+    "prefix": "sh"
+   },
+   {
+    "code": "688012",
+    "name": "中微公司",
+    "pct": 4.23,
+    "prefix": "sh"
+   },
+   {
+    "code": "688361",
+    "name": "中科飞测",
+    "pct": 4.21,
     "prefix": "sh"
    },
    {
     "code": "301392",
     "name": "汇成真空",
-    "pct": 3.98,
+    "pct": 4.19,
     "prefix": "sz"
    },
    {
-    "code": "688256",
-    "name": "寒武纪",
-    "pct": 3.68,
+    "code": "603920",
+    "name": "世运电路",
+    "pct": 3.28,
     "prefix": "sh"
    },
    {
-    "code": "01888",
-    "name": "建滔积层板",
-    "pct": 3.62,
-    "prefix": "sz"
-   },
-   {
-    "code": "002938",
-    "name": "鹏鼎控股",
-    "pct": 3.37,
-    "prefix": "sz"
+    "code": "603061",
+    "name": "金海通",
+    "pct": 3.02,
+    "prefix": "sh"
    }
   ]
  },
@@ -660,8 +587,8 @@
   "code": "501076",
   "name": "鹏华创新动力混合(LOF)",
   "prefix": "sh",
-  "nav": 1.3854,
-  "navDate": "2026-10-22",
+  "nav": 1.2446,
+  "navDate": "2026-10-29",
   "stockPct": 0.7313,
   "covered": 0.6375,
   "scale": 1.147,
